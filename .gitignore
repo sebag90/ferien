@@ -1,0 +1,14 @@
+# Nothing here is generated: the site is the files themselves.
+# src/data/germany-paths.js is committed on purpose (regenerate with `just map`),
+# as are the self-hosted fonts in src/styles/fonts/.
+
+# Scratch space for throwaway experiments.
+.tmp/
+
+# Impeccable writes per-machine runtime state into these. The durable half of
+# .impeccable/ — design.json and surfaces/ — is committed deliberately: it is
+# what keeps later work on-brand, so never ignore .impeccable/ as a whole.
+.impeccable/review/
+.impeccable/mocks/
+.impeccable/questions/
+.impeccable/config.local.json

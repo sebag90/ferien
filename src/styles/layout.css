@@ -1,0 +1,130 @@
+.site-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px 24px;
+  flex-wrap: wrap;
+  padding: 14px var(--page-x);
+  border-bottom: 1px solid var(--line);
+  margin-bottom: clamp(16px, 2vw, 30px);
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+}
+.brand__mark {
+  width: 26px;
+  height: 26px;
+}
+.brand__text {
+  font-size: var(--text-brand);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+.brand__muted {
+  color: var(--ink-3);
+  font-weight: 500;
+}
+
+.years {
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+  padding: 3px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-pill);
+  background: var(--surface);
+}
+.years__step {
+  display: grid;
+  place-items: center;
+  width: 30px;
+  height: 30px;
+  border: 0;
+  border-radius: var(--radius-pill);
+  background: transparent;
+  color: var(--ink-2);
+  cursor: pointer;
+}
+.years__step svg {
+  width: 16px;
+  height: 16px;
+}
+.years__step:hover:not(:disabled) {
+  background: var(--surface-sunken);
+  color: var(--ink);
+}
+.years__step:disabled {
+  opacity: 0.32;
+  cursor: default;
+}
+.years__value {
+  min-width: 4ch;
+  padding: 0 4px;
+  text-align: center;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -0.01em;
+}
+.years__today {
+  height: 30px;
+  margin-left: 4px;
+  padding: 0 13px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-pill);
+  background: transparent;
+  color: var(--ink-2);
+  font-size: var(--text-label);
+  font-weight: 600;
+  cursor: pointer;
+}
+.years__today:hover {
+  background: var(--surface-sunken);
+  color: var(--ink);
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) clamp(330px, 30vw, 440px);
+  gap: clamp(16px, 1.8vw, 30px);
+  align-items: start;
+  padding: 0 var(--page-x);
+}
+
+.cell--panel {
+  grid-column: 1 / -1;
+}
+
+.tl,
+.map,
+.panel {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-1);
+}
+
+.site-footer {
+  padding: clamp(20px, 3vw, 34px) var(--page-x) 36px;
+  color: var(--ink-3);
+  font-size: var(--text-caption);
+  line-height: 1.6;
+}
+.site-footer p {
+  max-width: 78ch;
+}
+
+@media (max-width: 900px) {
+  .layout {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .cell--side {
+    order: -1;
+  }
+  .map__svg {
+    max-height: 44vh;
+  }
+}

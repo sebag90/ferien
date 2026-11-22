@@ -1,0 +1,67 @@
+name: Release container
+
+# Manual: run it from the Actions tab, optionally naming a version.
+# A published GitHub Release also lands here, using its tag as the version.
+on:
+  workflow_dispatch:
+    inputs:
+      version:
+        description: "Version tag for the image (e.g. v1.2.3). Optional."
+        required: false
+        type: string
+  release:
+    types: [published]
+
+permissions:
+  contents: read
+  packages: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out
+        uses: actions/checkout@v4
+
+      - name: Resolve image name and version
+        env:
+          INPUT_VERSION: ${{ inputs.version }}
+          RELEASE_TAG: ${{ github.event.release.tag_name }}
+        run: |
+          # ghcr.io requires a lowercase repository path.
+          echo "IMAGE=ghcr.io/${GITHUB_REPOSITORY,,}" >> "$GITHUB_ENV"
+          echo "VERSION=${INPUT_VERSION:-${RELEASE_TAG:-}}" >> "$GITHUB_ENV"
+
+      - name: Log in to ghcr.io
+        run: |
+          echo "${{ secrets.GITHUB_TOKEN }}" \
+            | docker login ghcr.io --username "${{ github.actor }}" --password-stdin
+
+      - name: Build
+        run: |
+          set -euo pipefail
+          args=(
+            --file Containerfile
+            --tag "$IMAGE:latest"
+            --tag "$IMAGE:sha-${GITHUB_SHA::7}"
+            --label "org.opencontainers.image.source=${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}"
+            --label "org.opencontainers.image.revision=${GITHUB_SHA}"
+          )
+          if [ -n "$VERSION" ]; then
+            args+=(--tag "$IMAGE:$VERSION")
+            args+=(--label "org.opencontainers.image.version=$VERSION")
+          fi
+          docker build "${args[@]}" .
+
+      - name: Push
+        run: docker push --all-tags "$IMAGE"
+
+      - name: Summary
+        run: |
+          {
+            echo "### Released to ghcr.io"
+            echo
+            echo '```'
+            docker image ls --format '{{.Repository}}:{{.Tag}}' | grep -F "$IMAGE:" | sort
+            echo '```'
+          } >> "$GITHUB_STEP_SUMMARY"

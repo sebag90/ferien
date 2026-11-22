@@ -1,0 +1,66 @@
+/* The map card is only the map: the shared height goes entirely to the drawing.
+   The drawing is sized from its own aspect ratio and from the height the card
+   can offer, so it is always strictly inside the card — no percentage height,
+   no reliance on preserveAspectRatio to keep it there, and a clip on top. */
+.map {
+  --map-pad: 16px;
+  --map-h: calc(var(--tl-h) - (var(--map-pad) * 2) - 2px);
+  display: grid;
+  place-items: center;
+  height: var(--tl-h);
+  padding: var(--map-pad);
+}
+
+.map__svg {
+  width: min(100%, calc(var(--map-h) * var(--map-ratio)));
+  height: auto;
+  aspect-ratio: var(--map-ratio);
+  max-width: 100%;
+  max-height: 100%;
+  overflow: hidden;
+}
+
+.map__state {
+  fill: var(--map-empty);
+  stroke: var(--surface);
+  stroke-width: 1.4;
+  stroke-linejoin: round;
+  cursor: pointer;
+  transition: fill 0.18s var(--ease), stroke 0.18s var(--ease);
+}
+.map__state.is-active {
+  fill: var(--c, var(--map-empty));
+}
+.map__state.is-hover {
+  fill: var(--map-empty-hover);
+  stroke: var(--ink);
+  stroke-width: 2.6;
+}
+.map__state.is-active.is-hover {
+  fill: var(--c, var(--map-empty-hover));
+}
+.map__state.is-selected {
+  stroke: var(--ink);
+  stroke-width: 3.2;
+}
+.map__state:focus-visible {
+  outline: none;
+  stroke: var(--focus);
+  stroke-width: 3.6;
+}
+
+.map[data-status="loading"] .map__state {
+  fill: var(--surface-sunken);
+  transition: none;
+}
+
+@media (max-width: 900px) {
+  .map {
+    --map-pad: 12px;
+    height: auto;
+  }
+  .map__svg {
+    width: min(100%, calc(40vh * var(--map-ratio)));
+    max-height: 40vh;
+  }
+}

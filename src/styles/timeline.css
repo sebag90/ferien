@@ -1,0 +1,376 @@
+.tl {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  height: var(--tl-h);
+  padding: 16px 20px 12px;
+}
+
+/* The year is a window, not a poster: it scrolls sideways at DAY_WIDTH per day. */
+.tl__scroll {
+  flex: 1;
+  min-height: 0;
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding-bottom: 12px; /* room for the scrollbar */
+  overscroll-behavior-x: contain;
+}
+
+/* Styling the bar through ::-webkit-* is what suppresses engine arrow buttons;
+   the standard properties would win and hand back the native bar, so they are
+   handed only to engines that do not know ::-webkit-scrollbar (Firefox). */
+.tl__scroll::-webkit-scrollbar {
+  height: 9px;
+}
+.tl__scroll::-webkit-scrollbar-track {
+  background: transparent;
+}
+.tl__scroll::-webkit-scrollbar-thumb {
+  background: var(--line-2);
+  border-radius: var(--radius-pill);
+}
+.tl__scroll::-webkit-scrollbar-thumb:hover {
+  background: var(--ink-3);
+}
+
+@supports not selector(::-webkit-scrollbar) {
+  .tl__scroll {
+    scrollbar-width: thin;
+    scrollbar-color: var(--line-2) transparent;
+  }
+}
+
+.tl__inner {
+  position: relative;
+  display: grid;
+  grid-template-rows: auto minmax(0, 1fr);
+  height: 100%;
+  width: calc(var(--label-w) + var(--track-w));
+}
+
+.tl__axis,
+.tl__row {
+  display: grid;
+  grid-template-columns: var(--label-w) var(--track-w);
+}
+
+.tl__label {
+  position: sticky;
+  left: 0;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-width: 0;
+  padding-right: 14px;
+  background: var(--surface);
+}
+.tl__label--axis {
+  align-items: flex-start;
+  padding-top: 1px;
+  font-size: var(--text-micro);
+  font-weight: 600;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  color: var(--ink-3);
+}
+
+.tl__axis {
+  height: var(--axis-h);
+  border-bottom: 1px solid var(--line);
+}
+.tl__track--axis {
+  position: relative;
+  display: grid;
+  grid-template-rows: 17px 14px 15px;
+}
+.tl__months,
+.tl__daynums,
+.tl__chipline {
+  position: relative;
+}
+
+.tl__month {
+  position: absolute;
+  top: 0;
+  height: 100%;
+}
+/* The month name rides along its own month, so a scrolled view is never anonymous. */
+.tl__month-label {
+  position: sticky;
+  left: calc(var(--label-w) + 8px);
+  display: inline-block;
+  padding-right: 10px;
+  background: var(--surface);
+  font-size: var(--text-micro);
+  font-weight: 600;
+  line-height: 1;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink-2);
+  white-space: nowrap;
+}
+.tl__month-year {
+  color: var(--ink-3);
+}
+.tl__day {
+  position: absolute;
+  top: 0;
+  width: var(--day-w);
+  text-align: center;
+  font-size: var(--text-micro);
+  line-height: 1;
+  font-variant-numeric: tabular-nums;
+  color: var(--ink-3);
+}
+.tl__day.is-weekend {
+  color: var(--ink-2);
+  font-weight: 600;
+}
+
+.tl__chip {
+  position: absolute;
+  top: 1px;
+  left: var(--cx);
+  z-index: 3;
+  transform: translateX(-50%);
+  padding: 2px 8px;
+  border-radius: var(--radius-pill);
+  background: var(--ink);
+  color: var(--bg);
+  font-size: var(--text-micro);
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
+.tl__plot {
+  position: relative;
+  display: grid;
+  grid-auto-rows: minmax(0, 1fr);
+  gap: 2px;
+  padding-top: 5px;
+  outline: none;
+  cursor: crosshair;
+}
+.tl__plot:focus-visible {
+  outline: 2px solid var(--focus);
+  outline-offset: 3px;
+}
+
+.tl__row {
+  align-items: center;
+  min-height: 0;
+  border-radius: var(--radius-sm);
+  transition: background 0.12s linear, opacity 0.16s var(--ease);
+}
+.tl__row.is-hover {
+  background: color-mix(in oklab, var(--ink) 6%, var(--surface));
+}
+.tl__row.is-hover .tl__label {
+  background: color-mix(in oklab, var(--ink) 6%, var(--surface));
+}
+.tl__row.is-selected {
+  background: color-mix(in oklab, var(--ink) 10%, var(--surface));
+}
+.tl__row.is-selected .tl__label {
+  background: color-mix(in oklab, var(--ink) 10%, var(--surface));
+}
+.tl__row.is-dim {
+  opacity: 0.42;
+}
+.tl__row.is-dim.is-hover,
+.tl__row.is-dim.is-selected {
+  opacity: 1;
+}
+
+.tl__name {
+  font-size: var(--text-label);
+  color: var(--ink-2);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.tl__code {
+  display: none;
+  font-size: var(--text-caption);
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: var(--ink-3);
+}
+
+.tl__track {
+  position: relative;
+  height: 100%;
+  min-width: 0;
+}
+
+.tl__span {
+  position: absolute;
+  top: 50%;
+  display: flex;
+  align-items: center;
+  height: 66%;
+  min-height: 17px;
+  min-width: 2px;
+  border-radius: var(--radius-xs);
+  transform: translateY(-50%);
+}
+.tl__span-label {
+  position: sticky;
+  left: calc(var(--label-w) + 12px);
+  display: inline-block;
+  padding: 0 8px;
+  font-size: var(--text-micro);
+  font-weight: 600;
+  line-height: 1;
+  white-space: nowrap;
+  color: var(--span-ink, var(--ink));
+}
+
+.tl__span[data-type="winterferien"] {
+  background: var(--c-winter);
+  --span-ink: var(--c-winter-ink);
+}
+.tl__span[data-type="osterferien"] {
+  background: var(--c-oster);
+  --span-ink: var(--c-oster-ink);
+}
+.tl__span[data-type="pfingstferien"] {
+  background: var(--c-pfingsten);
+  --span-ink: var(--c-pfingsten-ink);
+}
+.tl__span[data-type="sommerferien"] {
+  background: var(--c-sommer);
+  --span-ink: var(--c-sommer-ink);
+}
+.tl__span[data-type="herbstferien"] {
+  background: var(--c-herbst);
+  --span-ink: var(--c-herbst-ink);
+}
+.tl__span[data-type="weihnachtsferien"] {
+  background: var(--c-weihnachten);
+  --span-ink: var(--c-weihnachten-ink);
+}
+.tl__span[data-type="variabler_ferientag"] {
+  background: var(--c-variabel);
+  --span-ink: var(--c-variabel-ink);
+}
+
+.tl__overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: var(--label-w);
+  width: var(--track-w);
+  pointer-events: none;
+}
+.tl__weekend {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  background: color-mix(in oklab, var(--ink) 4%, transparent);
+}
+.tl__gridline {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  background: var(--line-2);
+}
+/* A year change is a heavier mark on the axis, not a break in it. */
+.tl__yearline {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  background: color-mix(in oklab, var(--ink) 22%, transparent);
+}
+.tl__today {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: var(--x);
+  border-left: 1.5px dashed var(--ink-3);
+}
+.tl__cursor {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: var(--x);
+  width: 1px;
+  background: var(--ink);
+}
+
+/* The year arrives as one staggered settle, row by row. */
+.tl.is-enter .tl__row .tl__span {
+  animation: tl-span-in 420ms var(--ease) both;
+  animation-delay: calc(var(--i) * 18ms);
+}
+/* The entrance never hides a span: it starts visible and only settles. A frozen
+   or late animation must never read as missing data. */
+@keyframes tl-span-in {
+  from {
+    opacity: 0.4;
+    transform: translateY(calc(-50% + 2px));
+  }
+  to {
+    opacity: 1;
+    transform: translateY(-50%);
+  }
+}
+
+.tl[data-status="loading"] .tl__track {
+  border-radius: var(--radius-xs);
+  background: repeating-linear-gradient(
+    90deg,
+    var(--surface-sunken) 0 14px,
+    transparent 14px 28px
+  );
+  opacity: 0.7;
+}
+.tl[data-status="loading"] .tl__overlay {
+  display: none;
+}
+
+.tl__error {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-content: center;
+  justify-items: center;
+  gap: 6px;
+  padding: 24px;
+  text-align: center;
+  background: color-mix(in oklab, var(--surface) 93%, transparent);
+  border-radius: var(--radius-xl);
+}
+.tl__error p {
+  font-size: var(--text-subhead);
+  color: var(--ink-2);
+}
+.tl__error-detail {
+  font-size: var(--text-caption) !important;
+  color: var(--ink-3) !important;
+}
+.tl__error .btn {
+  margin-top: 8px;
+}
+
+@media (max-width: 900px) {
+  .tl {
+    --label-w: 76px;
+    padding: 14px 14px 12px;
+  }
+  .tl__name {
+    display: none;
+  }
+  .tl__code {
+    display: block;
+  }
+  /* Hide the caption text only: the label column must keep its opaque
+     background, or the day numbers bleed through it. */
+  .tl__axis-caption {
+    display: none;
+  }
+}

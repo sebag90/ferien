@@ -1,0 +1,548 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-11-22T13:05:05+00:00",
+  "title": "Design System: Schulferien in Deutschland",
+  "extensions": {
+    "colorMeta": {
+      "paper": {
+        "role": "neutral",
+        "displayName": "Cool Paper",
+        "canonical": "oklch(0.972 0.005 255)",
+        "tonalRamp": [
+          "oklch(0.200 0.002 255)",
+          "oklch(0.300 0.003 255)",
+          "oklch(0.400 0.004 255)",
+          "oklch(0.500 0.005 255)",
+          "oklch(0.600 0.005 255)",
+          "oklch(0.700 0.004 255)",
+          "oklch(0.800 0.003 255)",
+          "oklch(0.900 0.002 255)"
+        ]
+      },
+      "surface": {
+        "role": "neutral",
+        "displayName": "Surface",
+        "canonical": "oklch(0.995 0.002 255)",
+        "tonalRamp": [
+          "oklch(0.200 0.001 255)",
+          "oklch(0.300 0.001 255)",
+          "oklch(0.400 0.002 255)",
+          "oklch(0.500 0.002 255)",
+          "oklch(0.600 0.002 255)",
+          "oklch(0.700 0.002 255)",
+          "oklch(0.800 0.001 255)",
+          "oklch(0.900 0.001 255)"
+        ]
+      },
+      "surface-sunken": {
+        "role": "neutral",
+        "displayName": "Sunken",
+        "canonical": "oklch(0.955 0.006 255)",
+        "tonalRamp": [
+          "oklch(0.200 0.002 255)",
+          "oklch(0.300 0.004 255)",
+          "oklch(0.400 0.005 255)",
+          "oklch(0.500 0.006 255)",
+          "oklch(0.600 0.006 255)",
+          "oklch(0.700 0.005 255)",
+          "oklch(0.800 0.004 255)",
+          "oklch(0.900 0.002 255)"
+        ]
+      },
+      "ink": {
+        "role": "neutral",
+        "displayName": "Ink",
+        "canonical": "oklch(0.235 0.022 258)",
+        "tonalRamp": [
+          "oklch(0.200 0.008 258)",
+          "oklch(0.300 0.015 258)",
+          "oklch(0.400 0.020 258)",
+          "oklch(0.500 0.022 258)",
+          "oklch(0.600 0.022 258)",
+          "oklch(0.700 0.020 258)",
+          "oklch(0.800 0.015 258)",
+          "oklch(0.900 0.008 258)"
+        ]
+      },
+      "ink-muted": {
+        "role": "neutral",
+        "displayName": "Ink Muted",
+        "canonical": "oklch(0.44 0.02 258)",
+        "tonalRamp": [
+          "oklch(0.200 0.007 258)",
+          "oklch(0.300 0.014 258)",
+          "oklch(0.400 0.018 258)",
+          "oklch(0.500 0.020 258)",
+          "oklch(0.600 0.020 258)",
+          "oklch(0.700 0.018 258)",
+          "oklch(0.800 0.014 258)",
+          "oklch(0.900 0.007 258)"
+        ]
+      },
+      "ink-faint": {
+        "role": "neutral",
+        "displayName": "Ink Faint",
+        "canonical": "oklch(0.52 0.016 258)",
+        "tonalRamp": [
+          "oklch(0.200 0.006 258)",
+          "oklch(0.300 0.011 258)",
+          "oklch(0.400 0.014 258)",
+          "oklch(0.500 0.016 258)",
+          "oklch(0.600 0.016 258)",
+          "oklch(0.700 0.014 258)",
+          "oklch(0.800 0.011 258)",
+          "oklch(0.900 0.006 258)"
+        ]
+      },
+      "rule": {
+        "role": "neutral",
+        "displayName": "Rule",
+        "canonical": "oklch(0.905 0.008 258)",
+        "tonalRamp": [
+          "oklch(0.200 0.003 258)",
+          "oklch(0.300 0.005 258)",
+          "oklch(0.400 0.007 258)",
+          "oklch(0.500 0.008 258)",
+          "oklch(0.600 0.008 258)",
+          "oklch(0.700 0.007 258)",
+          "oklch(0.800 0.005 258)",
+          "oklch(0.900 0.003 258)"
+        ]
+      },
+      "rule-strong": {
+        "role": "neutral",
+        "displayName": "Rule Strong",
+        "canonical": "oklch(0.84 0.012 258)",
+        "tonalRamp": [
+          "oklch(0.200 0.004 258)",
+          "oklch(0.300 0.008 258)",
+          "oklch(0.400 0.011 258)",
+          "oklch(0.500 0.012 258)",
+          "oklch(0.600 0.012 258)",
+          "oklch(0.700 0.011 258)",
+          "oklch(0.800 0.008 258)",
+          "oklch(0.900 0.004 258)"
+        ]
+      },
+      "holiday-winter": {
+        "role": "primary",
+        "displayName": "Winter Blue",
+        "canonical": "oklch(0.56 0.15 255)",
+        "tonalRamp": [
+          "oklch(0.200 0.052 255)",
+          "oklch(0.300 0.102 255)",
+          "oklch(0.400 0.133 255)",
+          "oklch(0.500 0.148 255)",
+          "oklch(0.600 0.148 255)",
+          "oklch(0.700 0.133 255)",
+          "oklch(0.800 0.102 255)",
+          "oklch(0.900 0.052 255)"
+        ]
+      },
+      "holiday-oster": {
+        "role": "primary",
+        "displayName": "Oster Green",
+        "canonical": "oklch(0.62 0.15 150)",
+        "tonalRamp": [
+          "oklch(0.200 0.052 150)",
+          "oklch(0.300 0.102 150)",
+          "oklch(0.400 0.133 150)",
+          "oklch(0.500 0.148 150)",
+          "oklch(0.600 0.148 150)",
+          "oklch(0.700 0.133 150)",
+          "oklch(0.800 0.102 150)",
+          "oklch(0.900 0.052 150)"
+        ]
+      },
+      "holiday-pfingsten": {
+        "role": "primary",
+        "displayName": "Pfingsten Teal",
+        "canonical": "oklch(0.66 0.11 195)",
+        "tonalRamp": [
+          "oklch(0.200 0.038 195)",
+          "oklch(0.300 0.075 195)",
+          "oklch(0.400 0.098 195)",
+          "oklch(0.500 0.109 195)",
+          "oklch(0.600 0.109 195)",
+          "oklch(0.700 0.098 195)",
+          "oklch(0.800 0.075 195)",
+          "oklch(0.900 0.038 195)"
+        ]
+      },
+      "holiday-sommer": {
+        "role": "primary",
+        "displayName": "Sommer Amber",
+        "canonical": "oklch(0.74 0.15 70)",
+        "tonalRamp": [
+          "oklch(0.200 0.052 70)",
+          "oklch(0.300 0.102 70)",
+          "oklch(0.400 0.133 70)",
+          "oklch(0.500 0.148 70)",
+          "oklch(0.600 0.148 70)",
+          "oklch(0.700 0.133 70)",
+          "oklch(0.800 0.102 70)",
+          "oklch(0.900 0.052 70)"
+        ]
+      },
+      "holiday-herbst": {
+        "role": "primary",
+        "displayName": "Herbst Rust",
+        "canonical": "oklch(0.64 0.16 45)",
+        "tonalRamp": [
+          "oklch(0.200 0.055 45)",
+          "oklch(0.300 0.109 45)",
+          "oklch(0.400 0.142 45)",
+          "oklch(0.500 0.158 45)",
+          "oklch(0.600 0.158 45)",
+          "oklch(0.700 0.142 45)",
+          "oklch(0.800 0.109 45)",
+          "oklch(0.900 0.055 45)"
+        ]
+      },
+      "holiday-weihnachten": {
+        "role": "primary",
+        "displayName": "Weihnachten Berry",
+        "canonical": "oklch(0.54 0.16 18)",
+        "tonalRamp": [
+          "oklch(0.200 0.055 18)",
+          "oklch(0.300 0.109 18)",
+          "oklch(0.400 0.142 18)",
+          "oklch(0.500 0.158 18)",
+          "oklch(0.600 0.158 18)",
+          "oklch(0.700 0.142 18)",
+          "oklch(0.800 0.109 18)",
+          "oklch(0.900 0.055 18)"
+        ]
+      },
+      "holiday-variabel": {
+        "role": "primary",
+        "displayName": "Variabel Violet",
+        "canonical": "oklch(0.6 0.08 300)",
+        "tonalRamp": [
+          "oklch(0.200 0.028 300)",
+          "oklch(0.300 0.055 300)",
+          "oklch(0.400 0.071 300)",
+          "oklch(0.500 0.079 300)",
+          "oklch(0.600 0.079 300)",
+          "oklch(0.700 0.071 300)",
+          "oklch(0.800 0.055 300)",
+          "oklch(0.900 0.028 300)"
+        ]
+      },
+      "map-empty": {
+        "role": "neutral",
+        "displayName": "Map Empty",
+        "canonical": "oklch(0.915 0.008 258)",
+        "tonalRamp": [
+          "oklch(0.200 0.003 258)",
+          "oklch(0.300 0.005 258)",
+          "oklch(0.400 0.007 258)",
+          "oklch(0.500 0.008 258)",
+          "oklch(0.600 0.008 258)",
+          "oklch(0.700 0.007 258)",
+          "oklch(0.800 0.005 258)",
+          "oklch(0.900 0.003 258)"
+        ]
+      },
+      "map-empty-hover": {
+        "role": "neutral",
+        "displayName": "Map Empty Hover",
+        "canonical": "oklch(0.86 0.01 258)",
+        "tonalRamp": [
+          "oklch(0.200 0.003 258)",
+          "oklch(0.300 0.007 258)",
+          "oklch(0.400 0.009 258)",
+          "oklch(0.500 0.010 258)",
+          "oklch(0.600 0.010 258)",
+          "oklch(0.700 0.009 258)",
+          "oklch(0.800 0.007 258)",
+          "oklch(0.900 0.003 258)"
+        ]
+      },
+      "focus": {
+        "role": "primary",
+        "displayName": "Focus",
+        "canonical": "oklch(0.52 0.16 258)",
+        "tonalRamp": [
+          "oklch(0.200 0.055 258)",
+          "oklch(0.300 0.109 258)",
+          "oklch(0.400 0.142 258)",
+          "oklch(0.500 0.158 258)",
+          "oklch(0.600 0.158 258)",
+          "oklch(0.700 0.142 258)",
+          "oklch(0.800 0.109 258)",
+          "oklch(0.900 0.055 258)"
+        ]
+      },
+      "holiday-winter-ink": {
+        "role": "primary",
+        "displayName": "Winter Blue Ink",
+        "canonical": "oklch(0.26 0.1 255)",
+        "tonalRamp": [
+          "oklch(0.200 0.035 255)",
+          "oklch(0.300 0.068 255)",
+          "oklch(0.400 0.089 255)",
+          "oklch(0.500 0.099 255)",
+          "oklch(0.600 0.099 255)",
+          "oklch(0.700 0.089 255)",
+          "oklch(0.800 0.068 255)",
+          "oklch(0.900 0.035 255)"
+        ]
+      },
+      "holiday-oster-ink": {
+        "role": "primary",
+        "displayName": "Oster Green Ink",
+        "canonical": "oklch(0.27 0.1 150)",
+        "tonalRamp": [
+          "oklch(0.200 0.035 150)",
+          "oklch(0.300 0.068 150)",
+          "oklch(0.400 0.089 150)",
+          "oklch(0.500 0.099 150)",
+          "oklch(0.600 0.099 150)",
+          "oklch(0.700 0.089 150)",
+          "oklch(0.800 0.068 150)",
+          "oklch(0.900 0.035 150)"
+        ]
+      },
+      "holiday-pfingsten-ink": {
+        "role": "primary",
+        "displayName": "Pfingsten Teal Ink",
+        "canonical": "oklch(0.28 0.08 195)",
+        "tonalRamp": [
+          "oklch(0.200 0.028 195)",
+          "oklch(0.300 0.055 195)",
+          "oklch(0.400 0.071 195)",
+          "oklch(0.500 0.079 195)",
+          "oklch(0.600 0.079 195)",
+          "oklch(0.700 0.071 195)",
+          "oklch(0.800 0.055 195)",
+          "oklch(0.900 0.028 195)"
+        ]
+      },
+      "holiday-sommer-ink": {
+        "role": "primary",
+        "displayName": "Sommer Amber Ink (text on the fill)",
+        "canonical": "oklch(0.38 0.1 70)",
+        "tonalRamp": [
+          "oklch(0.200 0.035 70)",
+          "oklch(0.300 0.068 70)",
+          "oklch(0.400 0.089 70)",
+          "oklch(0.500 0.099 70)",
+          "oklch(0.600 0.099 70)",
+          "oklch(0.700 0.089 70)",
+          "oklch(0.800 0.068 70)",
+          "oklch(0.900 0.035 70)"
+        ]
+      },
+      "holiday-herbst-ink": {
+        "role": "primary",
+        "displayName": "Herbst Rust Ink",
+        "canonical": "oklch(0.28 0.11 45)",
+        "tonalRamp": [
+          "oklch(0.200 0.038 45)",
+          "oklch(0.300 0.075 45)",
+          "oklch(0.400 0.098 45)",
+          "oklch(0.500 0.109 45)",
+          "oklch(0.600 0.109 45)",
+          "oklch(0.700 0.098 45)",
+          "oklch(0.800 0.075 45)",
+          "oklch(0.900 0.038 45)"
+        ]
+      },
+      "holiday-weihnachten-ink": {
+        "role": "primary",
+        "displayName": "Weihnachten Berry Ink",
+        "canonical": "oklch(0.24 0.1 18)",
+        "tonalRamp": [
+          "oklch(0.200 0.035 18)",
+          "oklch(0.300 0.068 18)",
+          "oklch(0.400 0.089 18)",
+          "oklch(0.500 0.099 18)",
+          "oklch(0.600 0.099 18)",
+          "oklch(0.700 0.089 18)",
+          "oklch(0.800 0.068 18)",
+          "oklch(0.900 0.035 18)"
+        ]
+      },
+      "holiday-variabel-ink": {
+        "role": "primary",
+        "displayName": "Variabel Violet Ink",
+        "canonical": "oklch(0.28 0.07 300)",
+        "tonalRamp": [
+          "oklch(0.200 0.024 300)",
+          "oklch(0.300 0.048 300)",
+          "oklch(0.400 0.062 300)",
+          "oklch(0.500 0.069 300)",
+          "oklch(0.600 0.069 300)",
+          "oklch(0.700 0.062 300)",
+          "oklch(0.800 0.048 300)",
+          "oklch(0.900 0.024 300)"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Display",
+        "purpose": "The date readout above the map."
+      },
+      "brand": {
+        "displayName": "Brand",
+        "purpose": "The wordmark only."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "Prose and footer."
+      },
+      "label": {
+        "displayName": "Label",
+        "purpose": "Bundesland names, list items, buttons."
+      },
+      "micro": {
+        "displayName": "Micro",
+        "purpose": "Month axis, weekday, legend, category labels."
+      }
+    },
+    "shadows": [
+      {
+        "name": "card",
+        "value": "0 1px 2px oklch(0.235 0.022 258 / 0.05), 0 14px 30px -22px oklch(0.235 0.022 258 / 0.35)",
+        "purpose": "The only shadow in the system; lifts every card."
+      }
+    ],
+    "motion": [
+      {
+        "name": "ease-out-expo",
+        "value": "cubic-bezier(0.22, 1, 0.36, 1)",
+        "purpose": "Default easing for state and entrance transitions."
+      },
+      {
+        "name": "row-wipe",
+        "value": "560ms ease-out-expo, 22ms stagger per row",
+        "purpose": "The year ribbon's entrance on load and on year change."
+      },
+      {
+        "name": "fill-shift",
+        "value": "180ms ease-out-expo",
+        "purpose": "Map state fill when the shown date changes."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "stack",
+        "value": "900px"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Card",
+      "kind": "card",
+      "refersTo": "card",
+      "description": "The single container for ribbon, map and panel.",
+      "html": "<div class=\"ds-card\">Inflated surface, 1px rule, one soft shadow.</div>",
+      "css": ".ds-card{background:var(--surface);border:1px solid var(--rule);border-radius:14px;box-shadow:0 1px 2px oklch(0.235 0.022 258 / .05),0 14px 30px -22px oklch(0.235 0.022 258 / .35);padding:18px 22px 20px;color:var(--ink);font:400 1rem Archivo,system-ui,sans-serif}"
+    },
+    {
+      "name": "Holiday Span",
+      "kind": "custom",
+      "refersTo": "ribbon-span",
+      "description": "One holiday period in a day-level row, coloured by type, its name sticky inside it.",
+      "html": "<div class=\"ds-row\"><span class=\"ds-span\" style=\"left:40px;width:280px\"><span class=\"ds-span-label\">Sommerferien</span></span></div>",
+      "css": ".ds-row{position:relative;height:30px;border-radius:6px}.ds-span{position:absolute;top:50%;transform:translateY(-50%);display:flex;align-items:center;height:62%;min-height:16px;border-radius:3px;background:var(--c-sommer)}.ds-span-label{position:sticky;left:12px;display:inline-block;padding:0 8px;font:600 11px Archivo,system-ui,sans-serif;white-space:nowrap;color:var(--c-sommer-ink)}"
+    },
+    {
+      "name": "Year Control",
+      "kind": "nav",
+      "refersTo": "year-control",
+      "description": "Year stepper plus a reset to today.",
+      "html": "<div class=\"ds-years\"><button class=\"ds-step\" aria-label=\"Vorheriges Jahr\">&#8249;</button><span class=\"ds-value\">2026</span><button class=\"ds-step\" aria-label=\"Nächstes Jahr\">&#8250;</button><button class=\"ds-today\">Heute</button></div>",
+      "css": ".ds-years{display:inline-flex;align-items:center;gap:2px;padding:3px;border:1px solid var(--rule);border-radius:999px;background:var(--surface)}.ds-step{width:30px;height:30px;border:0;border-radius:999px;background:transparent;color:var(--ink-muted);font-size:1rem;cursor:pointer}.ds-step:hover{background:var(--surface-sunken);color:var(--ink)}.ds-value{min-width:4ch;text-align:center;font-weight:600;font-variant-numeric:tabular-nums;color:var(--ink)}.ds-today{height:30px;margin-left:4px;padding:0 13px;border:1px solid var(--rule);border-radius:999px;background:transparent;color:var(--ink-muted);font-size:.8125rem;font-weight:600;cursor:pointer}.ds-today:hover{background:var(--surface-sunken);color:var(--ink)}"
+    },
+    {
+      "name": "State Row",
+      "kind": "custom",
+      "refersTo": "state-row",
+      "description": "One Bundesland in the day's list.",
+      "html": "<button class=\"ds-state\"><i class=\"ds-dot\" style=\"--c:var(--c-sommer)\"></i><span class=\"ds-name\">Bayern</span><span class=\"ds-type\">Sommerferien</span></button>",
+      "css": ".ds-state{display:grid;grid-template-columns:10px minmax(0,1fr) auto;align-items:center;gap:10px;width:100%;padding:6px 9px;border:0;border-radius:8px;background:transparent;text-align:left;cursor:pointer}.ds-state:hover{background:var(--surface-sunken)}.ds-dot{width:10px;height:10px;border-radius:3px;background:var(--c)}.ds-name{font-size:.8125rem;font-weight:500;color:var(--ink)}.ds-type{font-size:.75rem;color:var(--ink-faint)}"
+    },
+    {
+      "name": "Heute Chip",
+      "kind": "chip",
+      "refersTo": "holiday-chip",
+      "description": "Marks the shown date as the real today.",
+      "html": "<span class=\"ds-chip\">Heute</span>",
+      "css": ".ds-chip{display:inline-block;padding:2px 9px;border-radius:999px;background:var(--surface-sunken);color:var(--ink-muted);font-size:.6875rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase}"
+    },
+    {
+      "name": "Legend Swatch",
+      "kind": "chip",
+      "refersTo": "holiday-chip",
+      "description": "Colour key for the seasonal ramp.",
+      "html": "<span class=\"ds-legend\"><i style=\"--c:var(--c-herbst)\"></i>Herbstferien</span>",
+      "css": ".ds-legend{display:inline-flex;align-items:center;gap:6px;font-size:.6875rem;color:var(--ink-faint)}.ds-legend i{width:10px;height:10px;border-radius:3px;background:var(--c)}"
+    },
+    {
+      "name": "Month Label",
+      "kind": "custom",
+      "refersTo": "month-label",
+      "description": "A month name that stays at the left edge while its month scrolls past.",
+      "html": "<span class=\"ds-month\">Juli</span>",
+      "css": ".ds-month{position:sticky;left:8px;display:inline-block;padding-right:10px;background:var(--surface);font:600 11px Archivo,system-ui,sans-serif;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-faint)}"
+    }
+  ],
+  "narrative": {
+    "northStar": "One date, two views",
+    "overview": "An Operate surface for the German school year. Cool paper neutrals carry the page; a single seven-step seasonal ramp is the only colour, and every hue on screen is data. The year is a scrolling window of days at a fixed 20px per day, and the map beside it is sized by the same height token the ribbon defines, so the two cards always agree and the map is as large as that height allows.",
+    "keyCharacteristics": [
+      "A day-level year window that scrolls sideways at a fixed 20px per day",
+      "Two top cards sharing one height token, --tl-h",
+      "The map card holds only the map; the date readout lives with the list",
+      "Restrained colour: the seasonal ramp is the interface's only chromatic content"
+    ],
+    "rules": [
+      {
+        "name": "The Colour-Is-Information Rule",
+        "body": "A hue may only appear because data put it there. `focus` is the single exception and never appears at rest.",
+        "section": "colors"
+      },
+      {
+        "name": "The One-Family Rule",
+        "body": "No second face, no display serif, no monospace costume. Hierarchy comes from size, weight, case and tracking.",
+        "section": "typography"
+      },
+      {
+        "name": "The One-Shadow Rule",
+        "body": "Depth is a single elevation. A new surface gets the card shadow or nothing.",
+        "section": "elevation"
+      },
+      {
+        "name": "The Fixed-Day-Width Rule",
+        "body": "The ribbon never shrinks to fit a year on screen; it scrolls. DAY_WIDTH is the single source of the day scale.",
+        "section": "layout"
+      },
+      {
+        "name": "The One-Height Rule",
+        "body": "The ribbon card and the map card share height: var(--tl-h). A change to the ribbon's rhythm changes the map's size too; never pad a card to make heights agree.",
+        "section": "layout"
+      }
+    ],
+    "dos": [
+      "Do keep every hue semantic: a colour is a holiday period, or focus.",
+      "Do use the oklch tokens in src/styles/tokens.css.",
+      "Do keep the ribbon and the map on the same date via one shared index.",
+      "Do ship tabular figures for anything that lines up.",
+      "Do respect prefers-reduced-motion; the ribbon is fully visible without the wipe.",
+      "Do use a period's paired *-ink token for text on that period's fill.",
+      "Do size the map sidebar so the portrait map is height-constrained and therefore as large as --tl-h allows."
+    ],
+    "donts": [
+      "Don't add a second shadow, a gradient, glass, or a glow.",
+      "Don't tint secondary text grey on a coloured surface.",
+      "Don't introduce a second typeface.",
+      "Don't use a border on one side of a box, or a zero-offset halo.",
+      "Don't use emoji or Unicode glyphs as icons.",
+      "Don't shrink the day width to fit a year on screen."
+    ]
+  }
+}
