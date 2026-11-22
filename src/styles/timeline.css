@@ -264,6 +264,12 @@
   left: var(--label-w);
   width: var(--track-w);
   pointer-events: none;
+  /* One hairline per day, drawn as a background so no per-day DOM is needed. */
+  background: repeating-linear-gradient(
+    to right,
+    var(--line) 0 1px,
+    transparent 1px var(--day-w)
+  );
 }
 .tl__weekend {
   position: absolute;

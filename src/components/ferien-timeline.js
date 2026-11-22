@@ -11,8 +11,8 @@ import {
 } from '../lib/dates.js';
 import { activeIndex, dateAt, todayIndex } from '../lib/view.js';
 
-/** Pixels per calendar day. The axis is a scrollable window, not a poster. */
-const DAY_WIDTH = 20;
+/** Pixels per calendar day. Wide enough that the window shows about two weeks. */
+const DAY_WIDTH = 40;
 /** A span narrower than this gets no inline label. */
 const LABEL_MIN_WIDTH = 116;
 
